@@ -403,7 +403,7 @@ function turn(){
     }
     if(window.leftChoice === 0){
         right.health -= leftDmg;
-        if(right.health < 0){
+        if(right.health <= 0){
             clearForWin(0);
             return;
         }
@@ -414,7 +414,7 @@ function turn(){
     }
     if(window.rightChoice === 0){
         left.health -= rightDmg;
-        if(left.health < 0){
+        if(left.health <= 0){
             clearForWin(1);
             return;
         }
