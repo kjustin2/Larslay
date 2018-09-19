@@ -435,7 +435,16 @@ function turn(){
             right.stamina = right.maxStamina;
         }
     }
-    
+    if(right.health <= 0){
+            clearForWin(0);
+            return;
+    }
+	if(left.health <= 0){
+            clearForWin(1);
+            return;
+    }
+	
+	
     update();
     resetScreen();
     window.leftStart = false;
