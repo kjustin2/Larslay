@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <script src="Larslay.js"></script>
+      <style>
+        .button {
+            background-color: #008B8B;
+            border: 4px solid grey;
+            color: white;
+            padding: 70px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 64px;
+            margin: 300px 2px;
+            cursor: pointer;
+            font-family: "Impact", Charcoal, sans-serif  
+        }
+        .moneyButton {
+            background-color: #008B8B;
+            border: 2px solid grey;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            text-decoration: none;
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+            font-family: "Impact", Charcoal, sans-serif;
+            margin: 5px 300px;
+        }
+        .regularButton {
+            background-color: #008B8B;
+            border: 2px solid grey;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: none;
+            left: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            font-family: "Impact", Charcoal, sans-serif;
+            margin: 5px 10px;
+        }
+        
+        .regularButton3 {
+            background-color: #008B8B;
+            border: 2px solid grey;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: none;
+            left: 50px;
+            font-size: 40px;
+            cursor: pointer;
+            font-family: "Impact", Charcoal, sans-serif;
+            margin: 5px 60px;
+        }
+        
+        .regularButton4 {
+            background-color: #008B8B;
+            border: 2px solid grey;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: none;
+            left: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            font-family: "Impact", Charcoal, sans-serif;
+            margin: 5px 45px;
+        }
+        
+        .regularButton5 {
+            background-color: #008B8B;
+            border: 2px solid grey;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: none;
+            left: 50px;
+            font-size: 60px;
+            cursor: pointer;
+            font-family: "Impact", Charcoal, sans-serif;
+            margin: 5px 257px;
+        }
+        
+        .regularButton2 {
+            background-color: #008B8B;
+            border: 2px solid grey;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: none;
+            left: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            font-family: "Impact", Charcoal, sans-serif;
+            margin: 5px 340px;
+        }
+        
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+      </style>
+   </head>
+   
+   <body>
+       <div align="center">
+           <input type="button" class="button" onclick="play()" value="Play?" id="playBut" />
+       </div>
+       <div class="row">
+           <div class="column">
+                <input type="button" class="moneyButton" value="Player One" id="leftName" /><br>
+                <input type="button" class="moneyButton" value="h" id="leftMoney" /><br>
+                <input type="button" class="regularButton" onclick="weaponLeft(0)" value="Dagger (0)" id="leftWeapon0"  />
+                <input type="button" class="regularButton" onclick="weaponLeft(1)" value="Tiny Sword (5)" id="leftWeapon1" />
+                <input type="button" class="regularButton" onclick="weaponLeft(2)" value="Spear (10)" id="leftWeapon2"  />
+                <input type="button" class="regularButton" onclick="weaponLeft(3)" value="Huge Sword (15)" id="leftWeapon3" /><br>
+                <input type="button" class="regularButton" onclick="shieldLeft(0)" value="No Shield (0)" id="leftShield0"  />
+                <input type="button" class="regularButton" onclick="shieldLeft(1)" value="Tiny Shield (5)" id="leftShield1" />
+                <input type="button" class="regularButton" onclick="shieldLeft(2)" value="Medium Shield (10)" id="leftShield2"  />
+                <input type="button" class="regularButton" onclick="shieldLeft(3)" value="Huge Shield (15)" id="leftShield3" /><br>
+                <input type="button" class="regularButton" onclick="potLeft(0)" value="No Potion (0)" id="leftPot0"  />
+                <input type="button" class="regularButton" onclick="potLeft(1)" value="Tiny Potion (5)" id="leftPot1" />
+                <input type="button" class="regularButton" onclick="potLeft(2)" value="Medium Potion (10)" id="leftPot2"  />
+                <input type="button" class="regularButton" onclick="potLeft(3)" value="Huge Potion (15)" id="leftPot3" /><br>
+                <input type="button" class="regularButton2" onclick="confirmLeft()" value="Confirm" id="leftConfirm" />
+                <input type="button" class="regularButton3" onclick="goLeft(0)" value="Attack" id="leftAttack" />
+                <input type="button" class="regularButton3" onclick="goLeft(1)" value="Rest" id="leftRest" />
+                <input type="button" class="regularButton3" onclick="goLeft(2)" value="Potion" id="leftPotionUse" /><br>
+                <input type="button" class="regularButton4" value="Health: 20" id="leftHealth" />
+                <input type="button" class="regularButton4" value="Stamina: 10" id="leftStamina" />
+                <input type="button" class="regularButton4" value="Given" id="leftPotionCount" /><br>
+                <input type="button" class="regularButton4" value="Given" id="leftSword" />
+                <input type="button" class="regularButton4" value="Given" id="leftShield" />
+                <input type="button" class="regularButton4" value="Given" id="leftPotion" />
+                <input type="button" class="regularButton5" value="YOU WIN!" id="leftWin" />
+           </div>
+           <div class="column">
+                <input type="button" class="moneyButton" value="Player Two" id="rightName" /><br>
+                <input type="button" class="moneyButton" value="h" id="rightMoney" /><br>
+                <input type="button" class="regularButton" onclick="weaponRight(0)" value="Dagger (0)" id="rightWeapon0"  />
+                <input type="button" class="regularButton" onclick="weaponRight(1)" value="Tiny Sword (5))" id="rightWeapon1" />
+                <input type="button" class="regularButton" onclick="weaponRight(2)" value="Spear (10)" id="rightWeapon2"  />
+                <input type="button" class="regularButton" onclick="weaponRight(3)" value="Huge Sword (15)" id="rightWeapon3" /><br>
+                <input type="button" class="regularButton" onclick="shieldRight(0)" value="No Shield (0)" id="rightShield0"  />
+                <input type="button" class="regularButton" onclick="shieldRight(1)" value="Tiny Shield (5)" id="rightShield1" />
+                <input type="button" class="regularButton" onclick="shieldRight(2)" value="Medium Shield (10)" id="rightShield2"  />
+                <input type="button" class="regularButton" onclick="shieldRight(3)" value="Huge Shield (15)" id="rightShield3" /><br>
+                <input type="button" class="regularButton" onclick="potRight(0)" value="No Potion (0)" id="rightPot0"  />
+                <input type="button" class="regularButton" onclick="potRight(1)" value="Tiny Potion (5)" id="rightPot1" />
+                <input type="button" class="regularButton" onclick="potRight(2)" value="Medium Potion (10)" id="rightPot2"  />
+                <input type="button" class="regularButton" onclick="potRight(3)" value="Huge Potion (15)" id="rightPot3" /><br>
+                <input type="button" class="regularButton2" onclick="confirmRight()" value="Confirm" id="rightConfirm" />
+                <input type="button" class="regularButton3" onclick="goRight(0)" value="Attack" id="rightAttack" />
+                <input type="button" class="regularButton3" onclick="goRight(1)" value="Rest" id="rightRest" />
+                <input type="button" class="regularButton3" onclick="goRight(2)" value="Potion" id="rightPotionUse" /><br>
+                <input type="button" class="regularButton4" value="Health: 20" id="rightHealth" />
+                <input type="button" class="regularButton4" value="Stamina: 10" id="rightStamina" />
+                <input type="button" class="regularButton4" value="Given" id="rightPotionCount" /><br>
+                <input type="button" class="regularButton4" value="Given" id="rightSword" />
+                <input type="button" class="regularButton4" value="Given" id="rightShield" />
+                <input type="button" class="regularButton4" value="Given" id="rightPotion" />
+                <input type="button" class="regularButton5" value="YOU WIN!" id="rightWin" />
+           </div>
+       </div>
+   </body>
+   
+</html>
