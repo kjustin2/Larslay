@@ -382,6 +382,25 @@ function turn(){
 	{
 		rightDmg = 2;
 	}
+	
+	if(window.leftChoice === 2){
+        if(left.potionCount > 0){
+            left.health += left.potion * 5;
+            left.potionCount--;
+            if(left.health > left.maxHealth){
+                left.health = left.maxHealth;
+            }
+        }
+    }
+    if(window.rightChoice === 2){
+        if(right.potionCount > 0){
+            right.health += right.potion * 5;
+            right.potionCount--;
+            if(right.health > right.maxHealth){
+                right.health = right.maxHealth;
+            }
+        }
+    }
     if(window.leftChoice === 0){
         right.health -= leftDmg;
         if(right.health < 0){
@@ -414,24 +433,6 @@ function turn(){
         right.stamina += rightStamUse;
         if(right.stamina > right.maxStamina){
             right.stamina = right.maxStamina;
-        }
-    }
-    if(window.leftChoice === 2){
-        if(left.potionCount > 0){
-            left.health += left.potion * 5;
-            left.potionCount--;
-            if(left.health > left.maxHealth){
-                left.health = left.maxHealth;
-            }
-        }
-    }
-    if(window.rightChoice === 2){
-        if(right.potionCount > 0){
-            right.health += right.potion * 5;
-            right.potionCount--;
-            if(right.health > right.maxHealth){
-                right.health = right.maxHealth;
-            }
         }
     }
     
