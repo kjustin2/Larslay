@@ -370,10 +370,18 @@ function goRight(choice){
 function turn(){
     var leftDmg = 0;
     var leftStamUse = Math.random() * (left.stamina/2 - 1) + 1;
-    leftDmg = leftStamUse * ((left.sword + 1) - (right.shield + 1)) + 2;
+    leftDmg = leftStamUse * ((left.sword + 3) - (right.shield + 1));
+	if(leftDmg <= 0)
+	{
+		leftDmg = 2;
+	}
     var rightDmg = 0;
     var rightStamUse = Math.random() * (right.stamina/2 - 1) + 1;
-    rightDmg = rightStamUse * ((right.sword + 1) - (left.shield + 1)) + 2;
+    rightDmg = rightStamUse * ((right.sword + 3) - (left.shield + 1));
+	if(rightDmg <= 0)
+	{
+		rightDmg = 2;
+	}
     if(window.leftChoice === 0){
         right.health -= leftDmg;
         if(right.health < 0){
